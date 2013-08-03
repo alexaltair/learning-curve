@@ -13,11 +13,12 @@ class AnswersController < ApplicationController
   def upload
     @answer = Answer.create(params[:answer])
     if @answer
-      @upload_info = Answer.token_form(params[:answer], answers_path)
+      @upload_info = Answer.token_form(params[:answer], save_video_new_answer_url(:answer_id => @answer.id))
     end
   end
 
   def save_video
+    redirect_to answers_path, :notice => "video successfully submitted"
   end
 
   def show
