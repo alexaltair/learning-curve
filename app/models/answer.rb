@@ -30,11 +30,12 @@ class Answer < ActiveRecord::Base
   end
 
   def self.video_options(params)
-    opts = {:title => "title",
-     :caption => params[:caption],
+    opts = {
+     :title => params[:caption],
      :category => "People",
-     :keywords => ["test"]}
-    end
+     :keywords => ["test"]
+    }
+  end
 
 
 
