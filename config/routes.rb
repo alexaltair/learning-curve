@@ -1,4 +1,6 @@
 LearningCurve::Application.routes.draw do
 
-  root :to => 'answers#index'
+  devise_for :users
+
+  root to: 'answers#index'
 end
