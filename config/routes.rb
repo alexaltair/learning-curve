@@ -6,7 +6,9 @@ LearningCurve::Application.routes.draw do
     end
   end
 
+  resources :questions
+
   get '/answers/upload' => 'answers#upload'
-  root :to => 'answers#index'
+  root :to => 'questions#index'
 
 end

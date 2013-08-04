@@ -29,4 +29,10 @@ class AnswersController < ApplicationController
     @answer = Answer.find(params[:id])
   end
 
+  def destroy
+    @answer = Answer.find(params[:answer_id])
+    @answer.delete
+    redirect_to answers_path
+  end
+
 end
