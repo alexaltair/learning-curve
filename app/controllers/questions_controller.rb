@@ -19,7 +19,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(params[:question])
     if @question.save
-      flash[:notice] = "The question was successfully posted!"
+      flash[:notice] = "The question was successfully posted"
       redirect_to '/questions'
 
     else

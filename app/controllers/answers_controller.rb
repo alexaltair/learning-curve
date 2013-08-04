@@ -22,7 +22,7 @@ class AnswersController < ApplicationController
   def save_video
     @answer = Answer.find(params[:answer_id])
     @answer.update_attributes(:video => params[:id].to_s)
-    redirect_to answers_path, :notice => "video successfully submitted"
+    redirect_to "/questions/#{@answer.question_id}", :notice => "video successfully submitted"
   end
 
   def show
