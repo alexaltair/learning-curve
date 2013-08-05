@@ -7,8 +7,7 @@ LearningCurve::Application.routes.draw do
   end
 
   resources :questions
-
+  root to: 'questions#index'
   get '/answers/upload' => 'answers#upload'
-  root :to => 'questions#index'
-
+  devise_for :users
 end
