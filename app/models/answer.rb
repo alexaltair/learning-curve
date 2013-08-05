@@ -22,7 +22,7 @@ class Answer < ActiveRecord::Base
   has_many :votes, as: :votable
 
   def self.yt_session
-     @yt_session ||= YouTubeIt::Client.new(:username => "learningcurvelabs@gmail.com" , :password => "password" , :dev_key => "dev key")
+     @yt_session ||= YouTubeIt::Client.new(:username => GOOGLE_USER_NAME, :password => GOOGLE_PASSWORD, :dev_key => GOOGLE_API_DEV_KEY)
   end
 
   def self.token_form(params, nexturl)
