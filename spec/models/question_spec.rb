@@ -14,5 +14,10 @@
 require 'spec_helper'
 
 describe Question do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should belong_to :user }
+  it { should have_many :answers }
+  it { should have_many :votes }
+
+  it { should validate_presence_of :description}
+  it { should validate_presence_of :title}
 end

@@ -40,7 +40,7 @@ class QuestionsController < ApplicationController
   def destroy
     @question = Question.find(params[:id])
     @question.delete
-    redirect_to :index
+    redirect_to questions_path
   end
 
 end

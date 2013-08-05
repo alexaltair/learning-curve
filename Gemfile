@@ -14,6 +14,7 @@ group :development, :test do
   gem 'annotate'
   gem 'pry-rails'
   gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
 end
 
 group :production do
