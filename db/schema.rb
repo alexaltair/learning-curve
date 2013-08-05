@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130802182430) do
+ActiveRecord::Schema.define(:version => 20130805010202) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20130802182430) do
     t.string   "votable_type"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.integer  "direction"
   end
 
 end
