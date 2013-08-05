@@ -13,6 +13,7 @@ group :development, :test do
   gem 'capybara'
   gem 'annotate'
   gem 'pry-rails'
+  gem 'shoulda-matchers'
 end
 
 group :production do
