@@ -7,10 +7,9 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    @answer = @question.answers.build(:question_id => @question.id)
-
-
+    @answer = @question.answers.build(params[:answer])
   end
+
 
   def new
     @question = Question.new
