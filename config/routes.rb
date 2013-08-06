@@ -1,4 +1,6 @@
 LearningCurve::Application.routes.draw do
+  get "profiles/show"
+
   resources :answers do
     new do
       post :upload
