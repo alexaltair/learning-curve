@@ -6,4 +6,10 @@ factory :question do
   description "question description"
 end
 
+factory :answer do
+  caption "answer title"
+  user_id 1
+  question_id 1
+  end
+
 end
