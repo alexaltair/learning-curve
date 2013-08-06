@@ -7,8 +7,9 @@ LearningCurve::Application.routes.draw do
   end
 
   resources :questions
-
+  
   get '/answers/upload' => 'answers#upload'
-  root :to => 'questions#index'
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
+  root to: 'questions#index'
 end
