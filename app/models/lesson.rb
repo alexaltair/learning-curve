@@ -14,17 +14,8 @@
 class Lesson < ActiveRecord::Base
   require "youtube_it"
 
-  attr_accessible :description, :title, :user_id, :video
+  attr_accessible :description, :title, :user, :video
 
-  belongs_to :user
-  has_many :votes, as: :votable
-
-
-
-
-  attr_accessible :caption, :question_id, :user_id, :video
-
-  belongs_to :question
   belongs_to :user
   has_many :votes, as: :votable
 
