@@ -1,7 +1,9 @@
 <ul>
   <% @questions.each do |question| %>
+
     <li><a href='/questions/<%= question.id %>'><%= question.title %></a></li>
   <% end %>
 </ul>
 
 <%= link_to "Ask a question", new_question_path %>
+<%= link_to "Post a lesson", new_lesson_path %>

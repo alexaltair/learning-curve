@@ -12,8 +12,35 @@
 #
 
 class Lesson < ActiveRecord::Base
+  require "youtube_it"
+
   attr_accessible :description, :title, :user_id, :video
 
   belongs_to :user
   has_many :votes, as: :votable
+
+
+
+
+  attr_accessible :caption, :question_id, :user_id, :video
+
+  belongs_to :question
+  belongs_to :user
+  has_many :votes, as: :votable
+
+  def self.yt_session
+     @yt_session ||= YouTubeIt::Client.new(:username => GOOGLE_USER_NAME, :password => GOOGLE_PASSWORD, :dev_key => GOOGLE_API_DEV_KEY)
+  end
+
+  def self.token_form(params, nexturl)
+    yt_session.upload_token(video_options(params), nexturl)
+  end
+
+  def self.video_options(params)
+    opts = {
+     :title => params[:title],
+     :category => "People",
+     :keywords => ["test"]
+    }
+  end
 end
