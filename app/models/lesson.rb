@@ -20,15 +20,6 @@ class Lesson < ActiveRecord::Base
   belongs_to :user
   has_many :votes, as: :votable
 
-
-
-
-  attr_accessible :caption, :question_id, :user_id, :video
-
-  belongs_to :question
-  belongs_to :user
-  has_many :votes, as: :votable
-
   def self.yt_session
      @yt_session ||= YouTubeIt::Client.new(:username => GOOGLE_USER_NAME, :password => GOOGLE_PASSWORD, :dev_key => GOOGLE_API_DEV_KEY)
   end

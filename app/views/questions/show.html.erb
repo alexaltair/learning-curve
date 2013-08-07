@@ -1,4 +1,4 @@
-<h2><%= @question.title%></h2>
+<h2><%= @question.title %></h2>
 <p><%= @question.description %></p>
 
 <% @question.answers.each do |answer| %>
@@ -10,11 +10,14 @@
    <% end %>
 <% end %>
 
-
-<%= form_for @answer, :url => upload_new_answer_path do |f| -%>
-  <%= f.label "Answer" %>
-  <%= f.text_field :caption, :class => 'text_field' %>
-  <%= f.hidden_field :question %>
-  <%= button_tag "Step 2" %>
-  <%= link_to t(:default => "Cancel"), answers_path %>
-<% end -%>
+<% if user_signed_in? %>
+  <%= form_for @answer, :url => upload_new_answer_path do |f| -%>
+    <%= f.label "Answer" %>
+    <%= f.text_field :caption, :class => 'text_field' %>
+    <%= f.hidden_field :question_id %>
+    <%= button_tag "Step 2" %>
+    <%= link_to t("Cancel"), questions_path, :class => "text_button_padding link_button" %>
+  <% end -%>
+<% else %>
+  <h3>Please sign in to post an answer.</h3>
+<% end %>
