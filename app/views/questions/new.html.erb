@@ -1,9 +1,14 @@
+<%= stylesheet_link_tag    "application", :media => "all" %>
+
 <%= form_for @question do |f| %>
+ <div class='title'>
   <%= f.text_field :title %>
   <%= f.label :title %>
-
+</div>
+<div class='question'>
   <%= f.text_area :description %>
   <%= f.label :question %>
+</div>
 
   <%= f.submit %>
 <% end %>

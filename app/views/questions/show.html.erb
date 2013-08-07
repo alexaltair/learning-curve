@@ -3,7 +3,7 @@
 
 <% @question.answers.each do |videos| %>
   <% unless videos.video.nil?  %>
-   <li><iframe src="http://www.youtube.com/embed/<%= videos.video %>"></iframe></li>
+   <p><iframe src="http://www.youtube.com/embed/<%= videos.video %>"></iframe></p>
    <% end %>
 <% end %>
 
