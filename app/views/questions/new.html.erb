@@ -1,7 +1,14 @@
+
+
 <%= form_for @question do |f| %>
+ <div class='title'>
   <%= f.text_field :title %>
   <%= f.label :title %>
+
+<div class='question'>
   <%= f.text_area :description %>
   <%= f.label :question %>
+</div>
+
   <%= f.submit %>
 <% end %>
