@@ -20,10 +20,11 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(params[:question])
+    @question.user = current_user
+
     if @question.save
       flash[:notice] = "The question was successfully posted"
       redirect_to '/questions'
-
     else
       render :new
     end

@@ -12,7 +12,7 @@
 #
 
 class Question < ActiveRecord::Base
-  attr_accessible :description, :title, :user_id, :video
+  attr_accessible :description, :title, :user, :video
 
   belongs_to :user
   has_many :answers
