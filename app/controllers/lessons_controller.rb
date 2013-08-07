@@ -22,7 +22,7 @@ class LessonsController < ApplicationController
 
   def save_video
     @lesson = Lesson.find(params[:lesson_id])
-    @lesson.update_attributes(:video => params[:id].to_s)
+    @lesson.update_attributes(:video => params[:id].to_s, :user => current_user)
     redirect_to "/lessons/#{@lesson.id}", :notice => "video successfully submitted"
   end
 
