@@ -1,0 +1,10 @@
+
+
+<% @lessons.each do |lesson|  %>
+
+  <h2><%= lesson.title %></h2>
+    <p><%= lesson.description %></p>
+    <li><%= lesson.created_at %></li>
+    <%= button_to "Delete Lesson", { action: "destroy", id: lesson.id },
+                                method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>
