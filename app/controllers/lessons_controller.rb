@@ -23,26 +23,23 @@ class LessonsController < ApplicationController
   def save_video
     @lesson = Lesson.find(params[:lesson_id])
     @lesson.update_attributes(:video => params[:id].to_s)
-    binding.pry
     redirect_to "/lessons/#{@lesson.id}", :notice => "video successfully submitted"
   end
 
-  def create
-    @lesson = Lesson.new(params[:lesson])
-    if @lesson.save
-      redirect_to @lesson
-    else
-      render :new
-    end
-  end
-
   def edit
+    @lesson = Lesson.find(params[:id])
   end
 
   def update
+    @lesson = Lesson.find(params[:id])
+    @lesson.update_attributes(params[:lesson])
+    render :show
   end
 
   def destroy
+    @lesson = Lesson.find(params[:id])
+    @lesson.delete
+    redirect_to lessons_path
   end
 
 end
