@@ -10,19 +10,17 @@ class AnswersController < ApplicationController
   end
 
   def upload
+    question = Question.find(params[:answer].delete(:question_id))
+    @answer = question.answers.build(params[:answer])
 
-    @answer = Answer.create(params[:answer])
-
-    if @answer
+    if @answer.save
       @upload_info = Answer.token_form(params[:answer], save_video_new_answer_url(:answer_id => @answer.id))
-
     end
-
   end
 
   def save_video
     @answer = Answer.find(params[:answer_id])
-    @answer.update_attributes(:video => params[:id].to_s)
+    @answer.update_attributes(:video => params[:id].to_s, :user => current_user)
     redirect_to "/questions/#{@answer.question_id}", :notice => "video successfully submitted"
   end
 
