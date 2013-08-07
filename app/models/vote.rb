@@ -11,8 +11,14 @@
 #
 
 class Vote < ActiveRecord::Base
-  attr_accessible :direction, :user_id, :votable_id, :votable_type
+  attr_accessible :direction, :user, :votable
 
   belongs_to :user
   belongs_to :votable, polymorphic: true
+
+  def self.get_vote_count(object)
+    votes = Vote.where( :votable_id => object.id,
+                        :votable_type => object.class )
+    votes.inject(0) { |sum, vote| sum+vote.direction }
+  end
 end

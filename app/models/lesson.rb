@@ -12,9 +12,10 @@
 #
 
 class Lesson < ActiveRecord::Base
+
   require "youtube_it"
 
-  attr_accessible :description, :title, :user_id, :video
+  attr_accessible :description, :title, :user, :video
 
   belongs_to :user
   has_many :votes, as: :votable

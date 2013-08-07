@@ -2,6 +2,7 @@ class VotesController < ApplicationController
 
   def create
     @vote = Vote.new(params[:vote])
+    @vote.user = current_user
   end
 
   def update

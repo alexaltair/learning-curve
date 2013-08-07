@@ -11,12 +11,10 @@ class AnswersController < ApplicationController
   end
 
   def upload
-
     @answer = Answer.create(params[:answer])
 
     if @answer
       @upload_info = Answer.token_form(params[:answer], save_video_new_answer_url(:answer_id => @answer.id))
-
     end
 
   end
