@@ -6,8 +6,15 @@ LearningCurve::Application.routes.draw do
     end
   end
 
+  resources :lessons do
+    new do
+      post :upload
+      get :save_video
+    end
+  end
+
   resources :questions
-  resources :lessons
+
 
   get '/answers/upload' => 'answers#upload'
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
