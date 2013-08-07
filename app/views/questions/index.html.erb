@@ -1,7 +1,3 @@
-<%# flash.each do |name, msg| %>
-    <%#= content_tag :div, msg, :id => "flash_#{name}" %>
- <%# end %>
-
 <ul>
   <% @questions.each do |question| %>
     <li><a href='/questions/<%= question.id %>'><%= question.title %></a></li>
