@@ -46,13 +46,15 @@ h1{
   float: right;
 }
 
-.question{
-  overflow: hidden;
-}
+
 
 .question h2{
   border-bottom: solid black 2px;
   margin-bottom: 0;
+}
+
+.question{
+  word-wrap: break-word;
 }
 
 .vote{
@@ -60,7 +62,17 @@ h1{
   height: 100px;
   background-color: black;
   float: left;
-  margin: 10px 20px;
+  margin: 20px 20px;
+}
+
+.question{
+  overflow: hidden;
+}
+
+.question p{
+  float: left;
+  width: 400px;
+
 }
 
 ul.answers{
@@ -73,4 +85,27 @@ ul.answers li{
   padding: 9px 0;
   border-top: solid black 2px;
 }
+
+p.caption{
+  margin-left: 100px;
+}
+
+.user_box{
+  background-color: #00FFFF;
+  height: 60px;
+  width: 140px;
+  position: absolute;
+  right: 0;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.avatar{
+  height: 40px;
+  width: 40px;
+  border: solid black 1px;
+  margin: 10px;
+}
+
+
 

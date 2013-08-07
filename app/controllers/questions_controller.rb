@@ -9,6 +9,8 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @answer = @question.answers.build(params[:answer])
+    @user = User.find_by_id(@question.user_id)
+
   end
 
 
