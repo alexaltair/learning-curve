@@ -1,4 +1,6 @@
 LearningCurve::Application.routes.draw do
+  get "profiles/show"
+
   resources :answers do
     new do
       post :upload
@@ -15,8 +17,9 @@ LearningCurve::Application.routes.draw do
 
   resources :questions
 
+  get '/answers/upload', to: 'answers#upload'
+  get '/profiles/:id', to: 'profiles#show'
 
-  get '/answers/upload' => 'answers#upload'
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   root to: 'questions#index'
