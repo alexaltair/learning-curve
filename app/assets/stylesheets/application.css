@@ -11,3 +11,66 @@
  *= require_self
  *= require_tree .
  */
+
+body{
+  margin: 0;
+  background-color: #C4C4C4;
+  font-family: 'Oswald', sans-serif;
+}
+header{
+  background-color: #C4C4C4;
+  color: white;
+}
+
+h1{
+  margin: 0;
+}
+
+#container{
+
+  width: 95%;
+  margin: 0 auto;
+}
+
+.content{
+  background-color: #C4C4C4;
+  width: 60%;
+  float: left;
+  position: relative;
+}
+
+.ads{
+  background-color: #7D7D7D;
+  width: 38%;
+  height: 300px;
+  float: right;
+}
+
+.question{
+  overflow: hidden;
+}
+
+.question h2{
+  border-bottom: solid black 2px;
+  margin-bottom: 0;
+}
+
+.vote{
+  width: 60px;
+  height: 100px;
+  background-color: black;
+  float: left;
+  margin: 10px 20px;
+}
+
+ul.answers{
+  clear: both;
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.answers li{
+  padding: 9px 0;
+  border-top: solid black 2px;
+}
+

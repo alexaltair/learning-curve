@@ -1,11 +1,18 @@
-<h2><%= @question.title%></h2>
-<p><%= @question.description %></p>
+<div class="question">
+  <h2 class="question"><%= @question.title.upcase%></h2>
+  <div class="vote"></div>
+  <p><%= @question.description %></p>
+</div>
 
-<% @question.answers.each do |videos| %>
-  <% unless videos.video.nil?  %>
-   <li><iframe src="http://www.youtube.com/embed/<%= videos.video %>"></iframe></li>
-   <% end %>
-<% end %>
+
+<ul class="answers">
+  <% @question.answers.each do |videos| %>
+    <% unless videos.video.nil?  %>
+    <div class="vote"></div>
+     <li><iframe src="http://www.youtube.com/embed/<%= videos.video %>"></iframe></li>
+     <% end %>
+  <% end %>
+</ul>
 
 <% if user_signed_in? %>
   <%= form_for @answer, :url => upload_new_answer_path do |f| -%>
