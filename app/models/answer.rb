@@ -15,7 +15,7 @@ class Answer < ActiveRecord::Base
   require "youtube_it"
 
 
-  attr_accessible :caption, :question, :user, :video, :question_id
+  attr_accessible :caption, :question, :user, :video
 
   belongs_to :question
   belongs_to :user

@@ -9,7 +9,6 @@
 <% end %>
 
 <% if user_signed_in? %>
-  <%= params.inspect %>
   <%= form_for @answer, :url => upload_new_answer_path do |f| -%>
     <%= f.label "Answer" %>
     <%= f.text_field :caption, :class => 'text_field' %>
@@ -20,4 +19,3 @@
 <% else %>
   <h3>Please sign in to post an answer.</h3>
 <% end %>
-<%# binding.pry %>
