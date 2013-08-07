@@ -4,7 +4,7 @@
     <p><%= @question.description %></p>
     <div class="user_box">
       <div class="avatar"></div>
-     <%= @user.email %>
+     <a href="/profiles/<%= @user.id %>"><%= @user.email %></a>
     </div>
 </div>
 
