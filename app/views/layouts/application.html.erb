@@ -9,13 +9,15 @@
   </head>
   <body>
     <header>
-      <h1>CODE CLIPS</h1>
+      <h1><a href="/">CODE CLIPS</a></h1>
     </header>
 
       <nav class="user_nav">
         <% if user_signed_in? %>
 
-          <h2><a href="/profiles/<%= current_user.id %>"><%= current_user.email %></a></h2>
+          <h2><a href="/profiles/<%= current_user.id %>"><%= current_user.name %></a></h2>
+          <%= link_to 'About', '/about.html' %> |
+          <%= link_to 'How to Use', '/how_to_use.html' %> |
           <%= link_to 'Edit Account', edit_user_registration_path %> |
 
           <%= link_to "Logout", destroy_user_session_path, method: :delete %>
@@ -29,7 +31,6 @@
 
     </header>
 
-    <div id="container">
 
       <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, id: "flash_#{name}" %>
@@ -40,7 +41,7 @@
         <%= yield %>
       </div>
 
-      <div class="ads">ads</div>
+      <div class="ads"></div>
     </div>
   </body>
 </html>
