@@ -1,8 +1,8 @@
 <%= form_for @lesson, :url => upload_new_lesson_path do |f| %>
 
   <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :description %>
-  <%= f.text_area :description %>
+  <%= f.text_field :title %><br />
+  <%= f.label :description %><br />
+  <%= f.text_area :description %><br />
   <%= f.submit %>
 <% end %>
