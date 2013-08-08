@@ -5,24 +5,43 @@
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <div id="container">
+    <header>
+      <h1><a href="/">{ CODE } CLIPS</a></h1>
+    </header>
+
       <nav class="user_nav">
         <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.email %></strong>.
+
+          <a href="/profiles/<%= current_user.id %>"><%= current_user.name %></a> |
+          <%= link_to 'About', '/about.html' %> |
           <%= link_to 'Edit Account', edit_user_registration_path %> |
+
           <%= link_to "Logout", destroy_user_session_path, method: :delete %>
         <% else %>
           <%= link_to "Sign up", new_user_registration_path %> |
           <%= link_to "Sign in", new_user_session_path %> |
           <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
         <% end %>
+
       </nav>
+
+    </header>
+
+
       <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, id: "flash_#{name}" %>
       <% end %>
-      <%= yield %>
+
+    <div id="container">
+      <div class="content">
+        <h2>search bar</h2>
+        <%= yield %>
+      </div>
+
+      <div class="ads"></div>
     </div>
   </body>
 </html>
