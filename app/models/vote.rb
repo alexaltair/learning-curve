@@ -19,6 +19,6 @@ class Vote < ActiveRecord::Base
   def self.get_vote_count(object)
     votes = Vote.where( :votable_id => object.id,
                         :votable_type => object.class )
-    votes.inject(0) { |sum, vote| sum+vote.direction }
+    votes.inject(0) { |sum, vote| sum + vote.direction }
   end
 end

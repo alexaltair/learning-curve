@@ -1,12 +1,20 @@
 <div>
   upvote button
 
-  <% form_tag('/') do |f| %>
-    <%= f.submit_tag("Vote Up") %>
+  <%= form_tag('/from_button', :method => 'get') do %>
+    <%= hidden_field_tag :button, 'up' %>
+    <%= hidden_field_tag :votable_id, votable.id %>
+    <%= hidden_field_tag :votable_type, votable.class %>
+    <%= submit_tag("Vote Up") %>
   <% end %>
 
   <%= Vote.get_vote_count(votable) %>
 
-  downvote button
+  <%= form_tag('/from_button', :method => 'get') do %>
+    <%= hidden_field_tag :button, 'down' %>
+    <%= hidden_field_tag :votable_id, votable.id %>
+    <%= hidden_field_tag :votable_type, votable.class %>
+    <%= submit_tag("Vote Down") %>
+  <% end %>
 
 </div>
