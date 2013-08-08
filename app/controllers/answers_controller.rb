@@ -1,10 +1,6 @@
 class AnswersController < ApplicationController
   before_filter :authenticate_user!, except: [:show, :index]
 
-  def index
-    @answers = Answer.all
-  end
-
   def new
     @answer = Answer.new
   end

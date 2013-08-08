@@ -1,7 +1,7 @@
 LearningCurve::Application.routes.draw do
   get "profiles/show"
 
-  resources :answers do
+  resources :answers, except: :index do
     new do
       post :upload
       get :save_video
