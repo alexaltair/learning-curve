@@ -20,6 +20,7 @@ LearningCurve::Application.routes.draw do
   get '/answers/upload', to: 'answers#upload'
   get '/profiles/:id', to: 'profiles#show'
   get '/from_button', to: 'votes#from_button'
+  get '/about', to: 'questions#about'
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
