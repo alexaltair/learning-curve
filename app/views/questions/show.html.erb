@@ -22,7 +22,7 @@
           <a href="/profiles/<%= answer.user.id %>"><%= answer.user.name %></a>
         </div>
         <li>
-          <iframe src="http://www.youtube.com/embed/<%= answer.video %>"></iframe></li>
+          <iframe width="640" height="390" src="http://www.youtube.com/embed/<%= answer.video %>"></iframe></li>
         <p class="caption"><%= answer.caption %></p>
 
       </div>
@@ -33,7 +33,7 @@
 
 <% if user_signed_in? %>
   <%= form_for @answer, :url => upload_new_answer_path do |f| -%>
-  <%= f.label "Answer Caption" %>
+  <%= f.label "Answer Description" %>
   <%= f.text_field :caption, :class => 'text_field' %>
   <%= f.hidden_field :question_id %>
   <%= button_tag "Step 2" %>

@@ -28,9 +28,9 @@ header{
   border-bottom: 1px solid rgba(89, 250, 251, 0.6);
 }
 
-div#flash_notice{
+div#flash_notice, #flash_alert{
   position: absolute;
-  right: 150px;
+  right: 80px;
   top: 100px;
   color: #00FFFF;
 }
@@ -114,7 +114,7 @@ h4.answers{
 
 .content{
   background-color: #343434;
-  width: 65%;
+  width: 100%;
   float: left;
   position: relative;
   color: white;
