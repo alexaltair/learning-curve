@@ -4,6 +4,7 @@
   <ul>
     <% @answers.each do |answer| %>
       <li><iframe src="http://www.youtube.com/embed/<%= answer.video %>"></iframe></li>
+      <li><%= answer.caption %></li>
     <% end %>
   </ul>
 <% end %>
@@ -12,7 +13,7 @@
   <h2>Questions</h2>
   <ul>
     <% @questions.each do |question| %>
-      <li><a href='/questions/<%= question.id %>'><%= question.title %></a></li>
+      <li><a class="submitted_questions" href='/questions/<%= question.id %>'><%= question.title %></a></li>
     <% end %>
   </ul>
 <% end %>
@@ -22,6 +23,7 @@
   <ul>
     <% @lessons.each do |lesson| %>
       <li><iframe src="http://www.youtube.com/embed/<%= lesson.video %>"></iframe></li>
+      <li><%= lesson.title %></li>
     <% end %>
   </ul>
 <% end %>
