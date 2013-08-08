@@ -4,17 +4,14 @@
     <p><%= @question.description %></p>
     <div class="user_box">
       <div class="avatar"></div>
-     <a href="/profiles/<%= @user.id %>"><%= @user.email %></a>
+     <a href="/profiles/<%= @question.user.id %>"><%= @question.user.email %></a>
     </div>
 </div>
 
 <ul class="answers">
   <h3><%= pluralize(@question.answers.count, 'Answer') %></h3>
-  <% @question.answers.each do |answer| %>
-    <% if answer.video.nil?  %>
-
-     <h3>No Answers posted yet.  Be the first!</h3>
-    <% else %>
+  <% unless @answers.empty? %>
+    <% @answers.each do |answer| %>
       <div class="answer">
         <div class="vote"></div>
         <div class="user_box">
@@ -27,6 +24,8 @@
 
       </div>
     <% end %>
+  <% else %>
+    <h3>No Answers posted yet.  Be the first!</h3>
   <% end %>
 </ul>
 
