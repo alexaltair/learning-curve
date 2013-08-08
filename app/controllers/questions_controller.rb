@@ -8,10 +8,11 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @answers = @question.answers
-    # binding.pry
-    @answer = Answer.new
 
-    # @user = User.find_by_id(@question.user_id)
+    @answer = Answer.new
+    @answer.question = @question
+
+
 
   end
 

@@ -15,14 +15,13 @@
       <div class="answer">
         <div class="vote"></div>
         <div class="user_box">
-          <div class="avatar"></div>
-          <a href="/profiles/<%= answer.user.id %>"><%= answer.user.name %></a>
+        <div class="avatar"></div>
+        <a href="/profiles/<%= answer.user.id %>"><%= answer.user.name %></a>
         </div>
-        <li>
-          <iframe width="640" height="390" src="http://www.youtube.com/embed/<%= answer.video %>"></iframe></li>
-        <p class="caption"><%= answer.caption %></p>
-
-      </div>
+          <li>
+            <iframe src="http://www.youtube.com/embed/<%= answer.video %>"></iframe>
+          </li>
+          <p class="caption"><%= answer.caption %></p>
     <% end %>
   <% else %>
     <h3>No Answers posted yet.  Be the first!</h3>
@@ -32,11 +31,11 @@
 
 <% if user_signed_in? %>
   <%= form_for @answer, :url => upload_new_answer_path do |f| -%>
-  <%= f.label "Answer Description" %>
+  <%= f.label "Answer Caption" %>
   <%= f.text_field :caption, :class => 'text_field' %>
   <%= f.hidden_field :question_id %>
   <%= button_tag "Step 2" %>
-  <%= link_to "Cancel", questions_path, :class => "cancel_link" %>
+  <%= link_to "Cancel", questions_path %>
   <% end -%>
 <% else %>
   <h3>Please sign in to post an answer.</h3>
