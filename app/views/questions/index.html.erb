@@ -1,14 +1,19 @@
 
 <h2>Top Questions</h2>
 
-<ul>
+<ul class="questions_list">
   <% @questions.each do |question| %>
+    <li>
+      <a href='/questions/<%= question.id %>'><%= question.title %></a>
+      <h4 class="answers">ANSWERS</h4><div class="answers_count"><%= question.answers.count%></div>
+      <h4 class="votes">VOTES</h4><div class="votes_count"><%= question.votes.count %></div>
+      <p>ASKED <%= question.created_at %></p>
+    </li>
 
-    <li><a href='/questions/<%= question.id %>'><%= question.title %></a></li>
   <% end %>
 </ul>
 
-<%= link_to "Ask a question", new_question_path %>
-<%= link_to "Post a lesson", new_lesson_path %>
+<%= link_to "ASK A QUESTION", new_question_path %>
+<%= link_to "POST A LESSON", new_lesson_path %>
 
 

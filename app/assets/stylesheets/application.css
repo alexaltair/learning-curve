@@ -22,7 +22,7 @@ body{
 }
 header{
   background-color: #C4C4C4;
-  color: white;
+
   font-size: 50px;
   float: left;
   margin: 0 auto;
@@ -30,6 +30,11 @@ header{
 
 h1{
   margin: 0;
+}
+
+h1 a{
+  text-decoration: none;
+  color: white;
 }
 
 nav{
@@ -41,11 +46,66 @@ nav a{
   color: black;
 }
 
+ul.questions_list{
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.questions_list li{
+  height: 50px;
+  border-bottom: 1px solid black;
+  position: relative;
+}
+
+ul.questions_list a{
+  text-decoration: none;
+  color: #00FFFF;
+  text-shadow: 0 0 1px black;
+}
+
+ul.questions_list li p{
+  font-size: 12px;
+  position: absolute;
+  bottom: 2px;
+}
+
+h4.votes, h4.answers{
+  position: absolute;
+  top: -20px;
+}
+
+h4.votes{
+  right: 0;
+}
+
+h4.answers{
+  right: 60px;
+  color: white;
+
+}
+
+.answers_count{
+  position: absolute;
+  right: 90px;
+  color: white;
+}
+
+.votes_count{
+  position: absolute;
+  right: 18px;
+}
+
+
 .content{
   background-color: #C4C4C4;
   width: 65%;
   float: left;
   position: relative;
+}
+
+.content a{
+  text-decoration: none;
+  color: black;
 }
 
 .ads{

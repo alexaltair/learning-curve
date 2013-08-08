@@ -9,7 +9,7 @@
   </head>
   <body>
     <header>
-      <h1>CODE CLIPS</h1>
+      <h1><a href="/">CODE CLIPS</a></h1>
     </header>
 
       <nav class="user_nav">
@@ -29,7 +29,6 @@
 
     </header>
 
-    <div id="container">
 
       <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, id: "flash_#{name}" %>
@@ -40,7 +39,7 @@
         <%= yield %>
       </div>
 
-      <div class="ads">ads</div>
+      <div class="ads"></div>
     </div>
   </body>
 </html>
