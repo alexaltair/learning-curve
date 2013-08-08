@@ -12,9 +12,17 @@
 <ul class="answers">
   <% @question.answers.each do |videos| %>
     <% unless videos.video.nil?  %>
-    <div class="vote"></div>
-     <li><iframe src="http://www.youtube.com/embed/<%= videos.video %>"></iframe></li>
-     <p class="caption"><%= videos.caption %></p>
+      <div class="answer">
+        <div class="vote"></div>
+        <div class="user_box">
+          <div class="avatar"></div>
+          <a href="/profiles/<%= videos.user.id %>"><%= videos.user.email %></a>
+        </div>
+        <li><iframe src="http://www.youtube.com/embed/<%= videos.video %>"></iframe></li>
+        <p class="caption"><%= videos.caption %></p>
+
+      </div>
+      </end>
      <% end %>
   <% end %>
 </ul>

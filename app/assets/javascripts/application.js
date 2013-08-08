@@ -14,17 +14,3 @@
 //= require jquery_ujs
 //= require_tree .
 
-$(document).ready(function() {
-  $('li').mouseover(function() {
-    $(this).fadeTo('fast', .5);
-  });
-  $('li').mouseout(function() {
-    $(this).fadeTo('fast', 1.0);
-  });
-});
-
-  // $(function() {
-  //   $( "#tabs" ).tabs();
-  //   collapsible: true
-  //   });
-  // });

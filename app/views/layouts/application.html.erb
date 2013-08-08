@@ -9,20 +9,19 @@
   </head>
   <body>
     <header>
-      <h1 class="logo"><a href="/">CODE CLIPS</a></h1>
-      <nav>
-        <ul>
-          <li>About</li>
-          <li>How to Use</li>
-          <% if user_signed_in? %>
-            <li><%= link_to current_user.email, edit_user_registration_path %></li>
-            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-          <% else %>
-            <li><%= link_to "Sign up", new_user_registration_path %></li>
-            <li><%= link_to "Login", new_user_session_path %></li>
-            <li><%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %></li>
-          <% end %>
-        </ul>
+      <h1>CODE CLIPS</h1>
+    </header>
+
+      <nav class="user_nav">
+        <% if user_signed_in? %>
+          <h2><a href="/profiles/<%= current_user.id %>"><%= current_user.email %></a></h2>
+          <%= link_to 'Edit profile', edit_user_registration_path %> |
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path %> |
+          <%= link_to "Login", new_user_session_path %> |
+          <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
+        <% end %>
 
       </nav>
 
