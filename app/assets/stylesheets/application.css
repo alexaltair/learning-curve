@@ -46,7 +46,7 @@ nav a{
   color: black;
 }
 
-ul.questions_list{
+ul{
   list-style-type: none;
   padding: 0;
 }
@@ -147,8 +147,6 @@ h4.answers{
 
 ul.answers{
   clear: both;
-  list-style-type: none;
-  padding: 0;
 }
 
 ul.answers li{
@@ -188,6 +186,10 @@ a:hover{
 
 .answer{
   position: relative;
+}
+
+form.new_answer{
+  margin-bottom: 40px;
 }
 
 

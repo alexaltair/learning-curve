@@ -7,7 +7,7 @@
       <a href='/questions/<%= question.id %>'><%= question.title %></a>
       <h4 class="answers">ANSWERS</h4><div class="answers_count"><%= question.answers.count%></div>
       <h4 class="votes">VOTES</h4><div class="votes_count"><%= question.votes.count %></div>
-      <p>ASKED <%= question.created_at %></p>
+      <p><%= question.created_at.strftime('%a %b %d %Y %T')  %></p>
     </li>
 
   <% end %>
