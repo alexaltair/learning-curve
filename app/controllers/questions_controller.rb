@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_filter :authenticate_user!, except: [:show, :index]
+  before_filter :authenticate_user!, except: [:show, :index, :about]
 
   def index
     @questions = Question.all
@@ -43,6 +43,9 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @question.delete
     redirect_to :index
+  end
+
+  def about
   end
 
 end

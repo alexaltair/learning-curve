@@ -1,19 +1,22 @@
 
+
 <h2>Top Questions</h2>
+
+  <%= link_to "ASK A QUESTION", new_question_path, class: "posts" %>
+  <%= link_to "POST A LESSON", new_lesson_path, class: "posts lesson" %>
+
 
 <ul class="questions_list">
   <% @questions.each do |question| %>
     <li>
-      <a href='/questions/<%= question.id %>'><%= question.title %></a>
+      <a class="question_title" href='/questions/<%= question.id %>'><%= question.title %></a>
       <h4 class="answers">ANSWERS</h4><div class="answers_count"><%= question.answers.count%></div>
       <h4 class="votes">VOTES</h4><div class="votes_count"><%= question.votes.count %></div>
-      <p><%= question.created_at.strftime('%a %b %d %Y %T')  %></p>
+      <p>asked on <%= question.created_at.strftime('%a %b %d %Y')  %> at <%= question.created_at.strftime('%T')  %></p>
     </li>
 
   <% end %>
 </ul>
 
-<%= link_to "ASK A QUESTION", new_question_path %>
-<%= link_to "POST A LESSON", new_lesson_path %>
 
 

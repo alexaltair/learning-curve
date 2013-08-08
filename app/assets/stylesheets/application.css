@@ -15,17 +15,32 @@
 
 body{
   margin: 0;
-  background-color: #C4C4C4;
+  background-color: #343434;
   font-family: 'Oswald', sans-serif;
   width: 940px;
   margin: 0 auto;
 }
 header{
-  background-color: #C4C4C4;
-
+  background-color: #343434;
   font-size: 50px;
   float: left;
   margin: 0 auto;
+  border-bottom: 1px solid rgba(89, 250, 251, 0.6);
+}
+
+div#flash_notice{
+  position: absolute;
+  right: 150px;
+  top: 100px;
+  color: #00FFFF;
+}
+
+.user_nav{
+  margin-top: 20px;
+}
+
+.user_nav a{
+  font-size: 21px;
 }
 
 h1{
@@ -35,6 +50,7 @@ h1{
 h1 a{
   text-decoration: none;
   color: white;
+  text-shadow: 0 0 15px rgba(89, 250, 251, 0.6);
 }
 
 nav{
@@ -43,7 +59,7 @@ nav{
 
 nav a{
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 ul{
@@ -97,10 +113,11 @@ h4.answers{
 
 
 .content{
-  background-color: #C4C4C4;
+  background-color: #343434;
   width: 65%;
   float: left;
   position: relative;
+  color: white;
 }
 
 .content a{
@@ -108,18 +125,33 @@ h4.answers{
   color: black;
 }
 
-.ads{
-  background-color: #7D7D7D;
-  width: 30%;
-  height: 500px;
-  float: right;
-  margin-top: 25px;
+
+a.posts{
+  position: absolute;
+  right: 0;
+  top: 80px;
+  font-size: 1.5em;
+  color: #00FFFF;
 }
 
+a.lesson{
+  right: 170px;
+}
 
+/*.ads{
+  background-color: #7D7D7D;
+  width: 30%;
+  height: 300px;
+  float: right;
+  margin-top: 25px;
+}*/
+
+.question_title:hover{
+  color: #7D7D7D;
+}
 
 .question h2{
-  border-bottom: solid black 2px;
+  border-bottom: solid grey 2px;
   margin-bottom: 0;
 }
 
@@ -133,6 +165,29 @@ h4.answers{
   background-color: black;
   float: left;
   margin: 20px 20px;
+}
+
+label{
+  display: block;
+}
+
+input{
+  display: block;
+}
+
+.remember input{
+  float: left;
+}
+
+input.post, button, .submit{
+  border: none;
+  background-color: #00FFFF;
+}
+
+
+
+.submitted_questions{
+  color: #00FFFF;
 }
 
 .question{
@@ -151,7 +206,7 @@ ul.answers{
 
 ul.answers li{
   padding: 9px 0;
-  border-top: solid black 2px;
+  border-top: solid grey 2px;
 }
 
 p.caption{
@@ -190,6 +245,39 @@ a:hover{
 
 form.new_answer{
   margin-bottom: 40px;
+}
+
+.pics{
+  overflow: hidden;
+}
+
+.group{
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  float: left;
+  border-radius: 50%;
+  padding: 26px;
+  margin-bottom: 20px;
+}
+
+.alex{
+  background-image: url('./alex.jpg');
+}
+
+.dave{
+  background-image: url('./dave.jpg');
+}
+
+.ryan{
+  background-image: url('./ryan.jpg');
+}
+
+.xiao{
+  background-image: url('./xiao.jpg');
 }
 
 
