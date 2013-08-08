@@ -11,3 +11,124 @@
  *= require_self
  *= require_tree .
  */
+
+
+body{
+  margin: 0;
+  background-color: #C4C4C4;
+  font-family: 'Oswald', sans-serif;
+  width: 940px;
+  margin: 0 auto;
+}
+header{
+  background-color: #C4C4C4;
+  color: white;
+  font-size: 50px;
+  float: left;
+  margin: 0 auto;
+}
+
+h1{
+  margin: 0;
+}
+
+nav{
+  float: right;
+}
+
+nav a{
+  text-decoration: none;
+  color: black;
+}
+
+.content{
+  background-color: #C4C4C4;
+  width: 65%;
+  float: left;
+  position: relative;
+}
+
+.ads{
+  background-color: #7D7D7D;
+  width: 30%;
+  height: 500px;
+  float: right;
+  margin-top: 25px;
+}
+
+
+
+.question h2{
+  border-bottom: solid black 2px;
+  margin-bottom: 0;
+}
+
+.question{
+  word-wrap: break-word;
+}
+
+.vote{
+  width: 60px;
+  height: 100px;
+  background-color: black;
+  float: left;
+  margin: 20px 20px;
+}
+
+.question{
+  overflow: hidden;
+}
+
+.question p{
+  float: left;
+  width: 360px;
+
+}
+
+ul.answers{
+  clear: both;
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.answers li{
+  padding: 9px 0;
+  border-top: solid black 2px;
+}
+
+p.caption{
+  margin-left: 100px;
+}
+
+.user_box{
+  background-color: #00FFFF;
+  height: 60px;
+  width: 140px;
+  position: absolute;
+  right: 0;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.user_box a{
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  color: #7D7D7D;
+}
+
+.avatar{
+  height: 40px;
+  width: 40px;
+  border: solid black 1px;
+  margin: 10px;
+}
+
+.answer{
+  position: relative;
+}
+
+
+
