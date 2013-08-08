@@ -3,10 +3,10 @@ Question.delete_all
 Answer.delete_all
 
 users = User.create([
-  { email: "admin@learningcurvelabs.com", name: "Admin", password: "Admin123", password_confirmation: "Admin123", admin: true },
-  { email: "exampleguy@gmail.com",    name: "Example Guy",    password: "examplepassword", password_confirmation: "examplepassword", admin: false },
-  { email: "exampleperson@gmail.com", name: "Example Person", password: "examplepassword", password_confirmation: "examplepassword", admin: false },
-  { email: "newdude@gmail.com",       name: "New Dude",       password: "newpassword",     password_confirmation: "newpassword", admin: false     }
+  { email: "admin@learningcurvelabs.com", name: "Admin",          password: "Admin123",        password_confirmation: "Admin123",        admin: true  },
+  { email: "exampleguy@gmail.com",        name: "Example Guy",    password: "examplepassword", password_confirmation: "examplepassword", admin: false },
+  { email: "exampleperson@gmail.com",     name: "Example Person", password: "examplepassword", password_confirmation: "examplepassword", admin: false },
+  { email: "newdude@gmail.com",           name: "New Dude",       password: "newpassword",     password_confirmation: "newpassword",     admin: false }
                     ])
 
 questions = Question.create([
