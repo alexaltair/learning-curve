@@ -12,6 +12,7 @@
 #
 
 class Lesson < ActiveRecord::Base
+
   require "youtube_it"
 
   attr_accessible :description, :title, :user, :video

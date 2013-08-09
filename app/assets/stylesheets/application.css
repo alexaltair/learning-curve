@@ -160,11 +160,11 @@ a.lesson{
 }
 
 .vote{
-  width: 60px;
+  width: 32px;
   height: 100px;
-  background-color: black;
   float: left;
   margin: 20px 20px;
+  text-align: center;
 }
 
 label{
@@ -262,6 +262,20 @@ form.new_answer{
   border-radius: 50%;
   padding: 26px;
   margin-bottom: 20px;
+}
+
+.vote-up, .vote-down {
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent url('./up_arrow.png') no-repeat;
+  text-indent: -9999em;
+}
+
+.vote-down {
+  background-image: url('./down_arrow.png');
 }
 
 .alex{
