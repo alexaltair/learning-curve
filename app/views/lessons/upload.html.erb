@@ -1,8 +1,7 @@
 <div class="upload_form">
   <%= form_tag @upload_info[:url], :multipart => true do %>
     <%= hidden_field_tag :token, @upload_info[:token] %>
-    <%= label_tag :file %>
     <%= file_field_tag :file %>
-    <%= submit_tag "Upload video" %>
+    <%= submit_tag "Upload video!", class: "upload" %>
   <% end %>
 </div>

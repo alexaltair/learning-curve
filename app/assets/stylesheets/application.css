@@ -29,10 +29,10 @@ header{
 }
 
 div#flash_notice, #flash_alert{
-  position: absolute;
-  right: 20px;
-  top: 100px;
+  position: relative;
+  left: 90px;
   color: #00FFFF;
+
 }
 
 .user_nav{
@@ -308,6 +308,20 @@ form.new_answer{
 
 .xiao{
   background-image: url('./xiao.jpg');
+}
+
+.upload{
+  background-color: #00FFFF;
+  border: none;
+  height: 100px;
+  width: 400px;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'oswald';
+}
+
+input#file{
+  height: 2em;
 }
 
 
