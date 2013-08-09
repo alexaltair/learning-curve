@@ -1,6 +1,6 @@
 <div class="question">
   <h2 class="question"><%= @question.title.upcase%></h2>
-  <div class="vote"></div>
+  <%= render partial: 'votes', locals: {:votable => @question} %>
     <p><%= @question.description %></p>
     <div class="user_box">
       <div class="avatar"></div>
@@ -13,13 +13,12 @@
   <% unless @answers.empty? %>
     <% @answers.each do |answer| %>
       <div class="answer">
-        <div class="vote"></div>
+        <%= render partial: 'votes', locals: {:votable => answer} %>
         <div class="user_box">
         <div class="avatar"></div>
         <a href="/profiles/<%= answer.user.id %>"><%= answer.user.name %></a>
         </div>
           <li>
-            <%= render partial: 'votes', locals: {:votable => answer} %>
             <iframe src="http://www.youtube.com/embed/<%= answer.video %>"></iframe>
           </li>
           <p class="caption"><%= answer.caption %></p>
