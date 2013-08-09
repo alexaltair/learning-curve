@@ -2,9 +2,9 @@
   <h2 class="question"><%= @question.title.upcase%></h2>
   <div class="vote"></div>
     <p><%= @question.description %></p>
-    <div class="user_box">
-      <div class="avatar"></div>
-     <a href="/profiles/<%= @question.user.id %>"><%= @question.user.name %></a>
+    <div class="user_box">Posted by
+      <!-- <div class="avatar"></div> -->
+     <a class="username" href="/profiles/<%= @question.user.id %>"><%= @question.user.name %></a><br>on <%= @question.created_at.strftime('%a %b %d %Y') %>
     </div>
 </div>
 
@@ -14,12 +14,12 @@
     <% @answers.each do |answer| %>
       <div class="answer">
         <div class="vote"></div>
-        <div class="user_box">
-        <div class="avatar"></div>
-        <a href="/profiles/<%= answer.user.id %>"><%= answer.user.name %></a>
+        <div class="user_box">Posted by
+        <!-- <div class="avatar"></div> -->
+        <a class="username" href="/profiles/<%= answer.user.id %>"><%= answer.user.name %></a><br>on <%= @question.created_at.strftime('%a %b %d %Y') %>
         </div>
           <li>
-            <iframe src="http://www.youtube.com/embed/<%= answer.video %>"></iframe>
+            <iframe width= "680px" height="400px" src="http://www.youtube.com/embed/<%= answer.video %>"></iframe>
           </li>
           <p class="caption"><%= answer.caption %></p>
     <% end %>
@@ -34,8 +34,8 @@
   <%= f.label "Answer Caption" %>
   <%= f.text_field :caption, :class => 'text_field' %>
   <%= f.hidden_field :question_id %>
-  <%= button_tag "Step 2" %>
-  <%= link_to "Cancel", questions_path %>
+  <%= button_tag "Step 2" %><br>
+  <%= link_to "Cancel", questions_path, class: "back" %>
   <% end -%>
 <% else %>
   <h3>Please sign in to post an answer.</h3>

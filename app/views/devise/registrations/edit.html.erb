@@ -5,11 +5,11 @@
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
     <%= devise_error_messages! %>
 
-  <div><%= f.label :name %><br />
-  <%= f.text_field :name, :autofocus => true %></div>
+  <div><%= f.label :name %>
+  <%= f.text_field :name, :autofocus => true %></div><br>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+  <div><%= f.label :email %>
+  <%= f.email_field :email %></div><br>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -28,6 +28,7 @@
     <div><%= f.submit "Update", :class => "submit" %></div>
   <% end %>
 
+  <h3>Cancel My Account</h3>
   <p>Sorry to see you go.  If you wish to cancel your account, click the button below. <%= button_to "Cancel my account", registration_path(resource_name), :class => "submit", :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
 
 
