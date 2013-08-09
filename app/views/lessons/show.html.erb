@@ -1,5 +1,6 @@
 
 <h2><%= @lesson.title %></h2>
+<%= render partial: 'votes', locals: {:votable => @lesson} %>
 <p><%= @lesson.description %></p>
 <iframe src="http://www.youtube.com/embed/<%= @lesson.video %>"></iframe><br>
 <%= link_to "Edit Lesson", edit_lesson_path, class: "back" %><br>

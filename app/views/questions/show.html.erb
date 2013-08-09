@@ -1,6 +1,6 @@
 <div class="question">
   <h2 class="question"><%= @question.title.upcase%></h2>
-  <div class="vote"></div>
+  <%= render partial: 'votes', locals: {:votable => @question} %>
     <p><%= @question.description %></p>
     <div class="user_box">Posted by
       <!-- <div class="avatar"></div> -->
@@ -13,7 +13,8 @@
   <% unless @answers.empty? %>
     <% @answers.each do |answer| %>
       <div class="answer">
-        <div class="vote"></div>
+
+        <%= render partial: 'votes', locals: {:votable => answer} %>
         <div class="user_box">Posted by
         <!-- <div class="avatar"></div> -->
         <a class="username" href="/profiles/<%= answer.user.id %>"><%= answer.user.name %></a><br>on <%= @question.created_at.strftime('%a %b %d %Y') %>
@@ -24,10 +25,9 @@
           <p class="caption"><%= answer.caption %></p>
     <% end %>
   <% else %>
-    <h3>No Answers posted yet.  Be the first!</h3>
+    <h3>No Answers posted yet.  Be the first!</h3>er
   <% end %>
 </ul>
-
 
 <% if user_signed_in? %>
   <%= form_for @answer, :url => upload_new_answer_path do |f| -%>
