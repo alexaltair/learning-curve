@@ -29,10 +29,10 @@ header{
 }
 
 div#flash_notice, #flash_alert{
-  position: absolute;
-  right: 80px;
-  top: 100px;
+  position: relative;
+  left: 90px;
   color: #00FFFF;
+
 }
 
 .user_nav{
@@ -67,10 +67,17 @@ ul{
   padding: 0;
 }
 
+
+ul.questions_list{
+  width: 65%;
+  position: absolute;
+}
+
 ul.questions_list li{
   height: 50px;
   border-bottom: 1px solid black;
   position: relative;
+
 }
 
 ul.questions_list a{
@@ -84,6 +91,18 @@ ul.questions_list li p{
   position: absolute;
   bottom: 2px;
 }
+
+ul.lessons_list{
+  width: 30%;
+  position: absolute;
+  right: 0;
+
+}
+
+iframe{
+  border: none;
+}
+
 
 h4.votes, h4.answers{
   position: absolute;
@@ -125,26 +144,33 @@ h4.answers{
   color: black;
 }
 
+a.username {
+  color: gray;
+}
 
-a.posts{
-  position: absolute;
-  right: 0;
-  top: 80px;
-  font-size: 1.5em;
+
+.post_links{
+  overflow: hidden;
+  width: 240px;
+  position: relative;
+  right: -110px;
+}
+
+.post_links a{
+  text-decoration: none;
   color: #00FFFF;
+  float: left;
+  margin-right: 20px;
 }
 
-a.lesson{
-  right: 170px;
+a.back{
+  background-color: #00FFFF;
+  font-size: 11px;
+  float: left;
+  margin: 2px;
+  padding: 5px;
 }
 
-/*.ads{
-  background-color: #7D7D7D;
-  width: 30%;
-  height: 300px;
-  float: right;
-  margin-top: 25px;
-}*/
 
 .question_title:hover{
   color: #7D7D7D;
@@ -186,6 +212,7 @@ input.post, button, .submit{
 
 
 
+
 .submitted_questions{
   color: #00FFFF;
 }
@@ -215,17 +242,19 @@ p.caption{
 
 .user_box{
   background-color: #00FFFF;
-  height: 60px;
+  height: 40px;
   width: 140px;
   position: absolute;
   right: 0;
   margin-top: 20px;
   font-size: 12px;
+  color: black;
+  padding: 10px;
 }
 
 .user_box a{
   text-decoration: none;
-  color: black;
+
 }
 
 a:hover{
@@ -249,6 +278,8 @@ form.new_answer{
 
 .pics{
   overflow: hidden;
+  width: 608px;
+  margin: 0 auto;
 }
 
 .group{
@@ -293,6 +324,25 @@ form.new_answer{
 .xiao{
   background-image: url('./xiao.jpg');
 }
+
+
+
+#video-upload, a.upload{
+  height: 60px;
+  width: 200px;
+  background-color: #00FFFF;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'oswald';
+  margin-bottom: 10px;
+  padding: 10px 20px;
+}
+
+#file, input.upload{
+  display: none;
+
+}
+
 
 
 

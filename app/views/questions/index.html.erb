@@ -1,16 +1,30 @@
-<h2>Top Questions</h2>
-
-  <%= link_to "ASK A QUESTION", new_question_path, class: "posts" %>
-  <%= link_to "POST A LESSON", new_lesson_path, class: "posts lesson" %>
 
 
-<ul class="questions_list">
-  <% @questions.each do |question| %>
-    <li>
-      <a class="question_title" href='/questions/<%= question.id %>'><%= question.title %></a>
-      <h4 class="answers">ANSWERS</h4><div class="answers_count"><%= question.answers.count%></div>
-      <h4 class="votes">VOTES</h4><div class="votes_count"><%= Vote.get_vote_count(question) %></div>
-      <p>asked on <%= question.created_at.strftime('%a %b %d %Y')  %> at <%= question.created_at.strftime('%T')  %></p>
-    </li>
-  <% end %>
-</ul>
+<div class="lists">
+  <ul class="questions_list">
+    <h2>Top Questions</h2>
+    <% @questions.each do |question| %>
+      <li>
+        <a class="question_title" href='/questions/<%= question.id %>'><%= question.title %></a>
+        <h4 class="answers">ANSWERS</h4><div class="answers_count"><%= question.answers.count%></div>
+        <h4 class="votes">VOTES</h4><div class="votes_count"><%= Vote.get_vote_count(question) %></div>
+        <p>asked on <%= question.created_at.strftime('%a %b %d %Y')  %> at <%= question.created_at.strftime('%T')  %></p>
+      </li>
+
+    <% end %>
+  </ul>
+
+
+
+  <ul class="lessons_list">
+    <h2>Recent Lessons</h2>
+    <% @lessons.each do |lesson| %>
+      <li><%= lesson.title %></li>
+      <iframe src="http://www.youtube.com/embed/<%= lesson.video %>"></iframe>
+    <% end %>
+  </ul>
+</div>
+
+
+
+
