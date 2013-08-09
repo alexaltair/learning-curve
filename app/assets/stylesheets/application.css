@@ -62,6 +62,23 @@ nav a{
   color: white;
 }
 
+input#search{
+  width: 400px;
+  float: left;
+  font-size: 28px;
+}
+
+input.search{
+  border: none;
+  height: 39px;
+  position: relative;
+  top: 2px;
+  left: 15px;
+  font-size: 28px;
+  background-color: #00FFFF;
+  color: #343434;
+}
+
 ul{
   list-style-type: none;
   padding: 0;
