@@ -14,3 +14,15 @@
 //= require jquery_ujs
 //= require_tree .
 
+$(function(){
+    $('#video-upload').click(function(e){
+      e.preventDefault();
+      $('#file').click();
+    });
+
+    $('a.upload').click(function(e){
+      e.preventDefault();
+      $('input.upload').click();
+    });
+  });
+

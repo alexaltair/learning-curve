@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20130806201156) do
     t.string   "votable_type"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.integer  "direction"
   end
 
 end

@@ -3,6 +3,7 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
+    @lessons = Lesson.all
   end
 
   def show
@@ -11,9 +12,6 @@ class QuestionsController < ApplicationController
 
     @answer = Answer.new
     @answer.question = @question
-
-
-
   end
 
 

@@ -3,7 +3,10 @@
   <h2>Answers</h2>
   <ul>
     <% @answers.each do |answer| %>
-      <li><iframe src="http://www.youtube.com/embed/<%= answer.video %>"></iframe></li>
+      <li>
+        <%= render partial: 'votes', locals: {:votable => answer} %>
+        <iframe src="http://www.youtube.com/embed/<%= answer.video %>"></iframe>
+      </li>
       <li><%= answer.caption %></li>
     <% end %>
   </ul>
@@ -13,7 +16,10 @@
   <h2>Questions</h2>
   <ul>
     <% @questions.each do |question| %>
-      <li><a class="submitted_questions" href='/questions/<%= question.id %>'><%= question.title %></a></li>
+      <li>
+        <%= render partial: 'votes', locals: {:votable => question} %>
+        <a class="submitted_questions" href='/questions/<%= question.id %>'><%= question.title %></a>
+      </li>
     <% end %>
   </ul>
 <% end %>
@@ -22,7 +28,10 @@
   <h2>Lessons</h2>
   <ul>
     <% @lessons.each do |lesson| %>
-      <li><iframe src="http://www.youtube.com/embed/<%= lesson.video %>"></iframe></li>
+      <li>
+        <%= render partial: 'votes', locals: {:votable => lesson} %>
+        <iframe src="http://www.youtube.com/embed/<%= lesson.video %>"></iframe>
+      </li>
       <li><%= lesson.title %></li>
     <% end %>
   </ul>
