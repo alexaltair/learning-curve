@@ -3,6 +3,7 @@
 <% @lessons.each do |lesson|  %>
 
   <h2><%= lesson.title %></h2>
+    <%= render partial: 'votes', locals: {:votable => lesson} %>
     <p><%= lesson.description %></p>
     <li><%= lesson.created_at %></li>
     <%= button_to "Delete Lesson", { action: "destroy", id: lesson.id },
