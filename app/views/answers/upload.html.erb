@@ -1,6 +1,8 @@
 <%= form_tag @upload_info[:url], :multipart => true do %>
   <%= hidden_field_tag :token, @upload_info[:token] %>
-  <%= label_tag :file %>
-  <%= file_field_tag :file %><br>
-  <%= submit_tag "Upload video" %>
+  <input type='file' id='file' name='file' />
+  <a href="#" id='video-upload'>Choose File</a><br>
+  <%= submit_tag "Upload video!", class: "upload" %><br>
+  <a href="#" class='upload'>Upload video!</a>
+  <%= submit_tag "Upload video", class: "upload" %>
 <% end %>
