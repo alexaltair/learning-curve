@@ -1,10 +1,10 @@
-<h1><%= @user.name %></h1>
-<% unless @answers.empty? %>
+<h1>Search Results</h1>
+
+<% unless @answerResults.empty? %>
   <h2>Answers</h2>
   <ul>
-    <% @answers.each do |answer| %>
+    <% @answerResults.each do |answer| %>
       <li>
-        <%= render partial: 'votes', locals: {:votable => answer} %>
         <iframe src="http://www.youtube.com/embed/<%= answer.video %>"></iframe>
       </li>
       <li><%= answer.caption %></li>
@@ -12,27 +12,27 @@
   </ul>
 <% end %>
 
-<% unless @questions.empty? %>
+<% unless @questionResults.empty? %>
   <h2>Questions</h2>
   <ul>
-    <% @questions.each do |question| %>
+    <% @questionResults.each do |question| %>
       <li>
-        <%= render partial: 'votes', locals: {:votable => question} %>
         <a class="submitted_questions" href='/questions/<%= question.id %>'><%= question.title %></a>
       </li>
     <% end %>
   </ul>
 <% end %>
 
-<% unless @lessons.empty? %>
+<% unless @lessonResults.empty? %>
   <h2>Lessons</h2>
   <ul>
-    <% @lessons.each do |lesson| %>
+    <% @lessonResults.each do |lesson| %>
       <li>
-        <%= render partial: 'votes', locals: {:votable => lesson} %>
         <iframe src="http://www.youtube.com/embed/<%= lesson.video %>"></iframe>
       </li>
-      <li><%= lesson.title %></li>
+      <li>
+        <%= lesson.title %>
+      </li>
     <% end %>
   </ul>
 <% end %>
