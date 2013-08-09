@@ -1,5 +1,5 @@
 <h1><%= @user.name %></h1>
-<% if @answers %>
+<% unless @answers.empty? %>
   <h2>Answers</h2>
   <ul>
     <% @answers.each do |answer| %>
@@ -9,7 +9,7 @@
   </ul>
 <% end %>
 
-<% if @questions %>
+<% unless @questions.empty? %>
   <h2>Questions</h2>
   <ul>
     <% @questions.each do |question| %>

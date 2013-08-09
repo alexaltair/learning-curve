@@ -30,14 +30,20 @@
 
     </header>
 
-
       <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, id: "flash_#{name}" %>
       <% end %>
 
     <div id="container">
       <div class="content">
-        <h2>search bar</h2>
+        <div class="search">
+          <%= form_tag searches_path, method: 'get' do %>
+            <p>
+              <%= text_field_tag :search, params[:search] %>
+              <%= submit_tag "Search", name: nil %>
+            </p>
+          <% end %>
+        </div>
         <%= yield %>
       </div>
 

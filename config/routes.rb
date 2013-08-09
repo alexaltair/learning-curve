@@ -16,6 +16,7 @@ LearningCurve::Application.routes.draw do
   end
 
   resources :questions
+  resources :searches, only: :index
 
   get '/answers/upload', to: 'answers#upload'
   get '/profiles/:id', to: 'profiles#show'
