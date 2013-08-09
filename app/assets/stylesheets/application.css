@@ -168,7 +168,7 @@ a.back{
   font-size: 11px;
   float: left;
   margin: 2px;
-  padding: 1px;
+  padding: 5px;
 }
 
 
@@ -242,13 +242,14 @@ p.caption{
 
 .user_box{
   background-color: #00FFFF;
-  height: 60px;
+  height: 40px;
   width: 140px;
   position: absolute;
   right: 0;
   margin-top: 20px;
   font-size: 12px;
   color: black;
+  padding: 10px;
 }
 
 .user_box a{
@@ -324,19 +325,24 @@ form.new_answer{
   background-image: url('./xiao.jpg');
 }
 
-.upload{
+
+
+#video-upload, a.upload{
+  height: 60px;
+  width: 200px;
   background-color: #00FFFF;
-  border: none;
-  height: 100px;
-  width: 400px;
   font-size: 30px;
   font-weight: bold;
   font-family: 'oswald';
+  margin-bottom: 10px;
+  padding: 10px 20px;
 }
 
-input#file{
-  height: 2em;
+#file, input.upload{
+  display: none;
+
 }
+
 
 
 
